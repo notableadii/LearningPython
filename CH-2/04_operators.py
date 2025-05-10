@@ -42,3 +42,14 @@ f = 5==5 # == equal to operator here == means that the value of 5 is equal to 5 
 print("d = ", d) # d = False
 print("e = ", e) # e = True
 print("f = ", f) # f = True
+
+#logicaL Operators
+
+e = True or False # or operator
+g = True and False # and operator
+
+print("e = ", e) # e = True because one of the values is True 
+print("g = ", g) # g = False because both values are not True
+
+
+print(not(False or False)) # not operator switches the value of True to False and vice versa
