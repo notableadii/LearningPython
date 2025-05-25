@@ -15,7 +15,7 @@ print("The English translation is:", words.get(word, "Translation not found.")) 
 
 #practice 2
 
-# write a progtam to input a list of numbers and print all the unique numbers in the list.
+# write a Program to input a list of numbers and print all the unique numbers in the list.
 
 s = set()  # Initialize an empty set to store unique numbers
 n = input("Enter numbers: ")  # Prompt user for input
@@ -82,4 +82,6 @@ print("Friends and their languages:", d)  # Print the dictionary containing frie
 s = {9, 8, 12, "Aditya", [1,2]}
 
 # No, you cannot change the values inside a list that is part of a set because lists are mutable and sets require their elements to be immutable.
+
+
 
