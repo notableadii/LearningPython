@@ -22,7 +22,11 @@ youstr = input("Enter your choice: ")
 # When player types 's', it means 1 (snake)
 # When player types 'w', it means -1 (water)  
 # When player types 'g', it means 0 (gun)
-youDict = {"s": 1, "w": -1, "g": 0}
+youDict = {
+    "s": 1,
+    "w": -1,
+    "g": 0
+    }
 
 # Use the dictionary to translate the player's letter choice into a number
 # If player typed 's', this will give us 1
@@ -32,7 +36,11 @@ you = youDict[youstr]
 
 # Create another dictionary that does the opposite - converts numbers back to words
 # This is so we can show the player what they chose in a nice way
-reverseDict = {1: "Snake", -1: "Water", 0: "Gun"}
+reverseDict = {
+    1: "Snake",
+   -1: "Water",
+    0: "Gun"
+    }
 
 # Print what both the player and computer chose
 # f-strings (the f"...") let us put variables inside text easily
