@@ -4,6 +4,9 @@ class Employee: # class definition
     
     def getInfo(self): # self is a reference to the instance of the class it is called on we use self to access instance attributes
         print(f"The language is {self.language} and salary is {self.salary}")
+    def greet(self):
+        print(f"Hello {self.name}, welcome to the company!")    
+
 # This code snippet demonstrates the use of class attributes and instance attributes in Python.
     
 aditya = Employee() # here aditya is an object of class Employee
@@ -14,3 +17,4 @@ aditya.language = "Javascript" # modifying class attribute for this instance
 
 # aditya.getInfo() # calling the instance method to get instance attributes
 Employee.getInfo(aditya) # calling the class method to get class attributes
+Employee.greet(aditya) # calling the class method to greet the employee
