@@ -14,4 +14,4 @@ rohan.name = "Rohan" # instance attribute
 print(f"{rohan.name}, {rohan.language}, {rohan.salary}")
 
 # here name is instance attribute
-# and salary and language are class attributes  
+# and salary and language are class attributes
