@@ -1,9 +1,9 @@
-'''
+"""
 This is the rules comment - it tells us what each number means:
 1 for snake
--1 for water  
+-1 for water
 0 for gun
-'''
+"""
 
 # Import the random module - this is like a magic box that gives us random numbers
 # We need this so the computer can make random choices
@@ -14,39 +14,43 @@ import random
 # It's like putting three pieces of paper in a hat and picking one blindly
 computer = random.choice([1, -1, 0])
 
-# Ask the player to type their choice and store it in a variable called 'youstr'
-# input() is like asking someone a question and waiting for their answer
-youstr = input("Enter your choice: ")
-
 # Create a dictionary (like a translator book) that converts letters to numbers
 # When player types 's', it means 1 (snake)
-# When player types 'w', it means -1 (water)  
+# When player types 'w', it means -1 (water)
 # When player types 'g', it means 0 (gun)
-youDict = {
-    "s": 1,
-    "w": -1,
-    "g": 0
-    }
-
-# Use the dictionary to translate the player's letter choice into a number
-# If player typed 's', this will give us 1
-# If player typed 'w', this will give us -1
-# If player typed 'g', this will give us 0
-you = youDict[youstr]
+youDict = {"s": 1, "w": -1, "g": 0}
 
 # Create another dictionary that does the opposite - converts numbers back to words
 # This is so we can show the player what they chose in a nice way
-reverseDict = {
-    1: "Snake",
-   -1: "Water",
-    0: "Gun"
-    }
+reverseDict = {1: "Snake", -1: "Water", 0: "Gun"}
+
+
+# Function to get valid input from the player
+def get_player_choice():
+    while True:
+        print("\nEnter your choice:")
+        print("s - Snake")
+        print("w - Water")
+        print("g - Gun")
+        youstr = input("Your choice: ").lower().strip()
+
+        if youstr in youDict:
+            return youstr
+        else:
+            print(
+                "Invalid choice! Please enter 's' for Snake, 'w' for Water, or 'g' for Gun."
+            )
+
+
+# Get the player's choice
+youstr = get_player_choice()
+
+# Use the dictionary to translate the player's letter choice into a number
+you = youDict[youstr]
 
 # Print what both the player and computer chose
-# f-strings (the f"...") let us put variables inside text easily
-# {reverseDict[you]} looks up the player's number and shows the word
-# {reverseDict[computer]} looks up the computer's number and shows the word
-print(f"You chose: {reverseDict[you]}\nComputer chose: {reverseDict[computer]}")
+print(f"\nYou chose: {reverseDict[you]}")
+print(f"Computer chose: {reverseDict[computer]}")
 
 # Now we check who wins! This is like a big decision tree
 # == means "is equal to" (checking if two things are the same)
@@ -60,7 +64,7 @@ if computer == you:
 elif computer == -1 and you == 1:
     print("You win!")
 
-# Check if computer chose snake (1) AND player chose gun (0)  
+# Check if computer chose snake (1) AND player chose gun (0)
 # In this game: Gun shoots snake, so gun wins! (Computer wins)
 elif computer == 1 and you == 0:
     print("You lose!")
@@ -84,11 +88,6 @@ elif computer == 0 and you == 1:
 # In this game: Water drowns gun, so water wins! (Computer wins)
 elif computer == -1 and you == 0:
     print("You Lose!")
-
-# This is the same as the condition above - it's repeated by mistake
-# In real code, we'd remove this duplicate
-elif computer == 0 and you == -1:
-    print("You Win!")
 
 # This is a safety net - if somehow none of the above conditions are true
 # This should never happen, but it's good practice to have a backup plan
